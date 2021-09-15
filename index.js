@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import router from "./routers/router.js";
+import router from "./routers/postsRouter.js";
 
 const PORT = 8000;
 const DB_URL =

@@ -22,7 +22,7 @@ class PostController {
   getOne = async (req, res) => {
     try {
       const post = await PostService.getOne(req.params.id);
-      return res.status(200).json(post);
+      return res.json(post);
     } catch (error) {
       res.status(500).json(error);
     }
@@ -31,16 +31,17 @@ class PostController {
   update = async (req, res) => {
     try {
       const updatedPost = await PostService.update(req.body);
-      return res.status(200).json(updatedPost);
+      return res.json(updatedPost);
     } catch (error) {
       res.status(500).json(error);
+      console.log(error);
     }
   };
 
   delete = async (req, res) => {
     try {
       const post = await PostService.delete(req.params.id);
-      return res.status(200).json(post);
+      return res.json(post);
     } catch (error) {
       res.status(500).json(error);
     }
